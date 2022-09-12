@@ -8,6 +8,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Id;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -15,9 +19,10 @@ import java.util.List;
 
 @Entity
 @Table(name = "tb_alunos")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Aluno {
 	
-	@javax.persistence.Id
+	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	Long Id;
 	String nome;
@@ -28,6 +33,7 @@ public class Aluno {
 	LocalDate dataDeNascimento;
 	
 	@OneToMany(mappedBy = "aluno", cascade = CascadeType.REMOVE , fetch = FetchType.LAZY)
+	@JsonIgnore
 	private List<AvaliacaoMedica> avaliacoes = new ArrayList<>();
 	
 	

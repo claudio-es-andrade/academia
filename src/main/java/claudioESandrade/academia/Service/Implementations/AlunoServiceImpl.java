@@ -20,7 +20,7 @@ public class AlunoServiceImpl implements IAlunoService{
 	@Autowired
 	private AlunoRepository repository;
 
-	public Aluno create(AlunoForm form) {
+	public Aluno criar(AlunoForm form) {
 		Aluno aluno = new Aluno();
 		aluno.setNome(form.getNome());
 		aluno.setCpf(form.getCpf());
@@ -31,13 +31,13 @@ public class AlunoServiceImpl implements IAlunoService{
 	}
 
 	@Override
-	public Aluno get(Long id) {
+	public Aluno obter(Long id) {
 		Aluno aluno = repository.findById(id).get();
 		
 		return aluno;
 	}
 
-	public List<Aluno> getAll(String dataDeNascimento) {
+	public List<Aluno> obterTodos(String dataDeNascimento) {
 
 		if(dataDeNascimento == null) {
 			return repository.findAll();
@@ -48,7 +48,7 @@ public class AlunoServiceImpl implements IAlunoService{
 
 	}
 
-	public Aluno update(Long id, AlunoUpdateForm form) {
+	public Aluno atualizar(AlunoUpdateForm form) {
 		
 		Aluno aluno = new Aluno();
 		aluno.setNome(form.getNome());
@@ -59,13 +59,13 @@ public class AlunoServiceImpl implements IAlunoService{
 		return repository.save(aluno);
 	}
 
-	public List<AvaliacaoMedica> getAllAvaliacaoMedicaId(Long id) {
+	public List<AvaliacaoMedica> obterTodosAvaliacaoMedicaId(Long id) {
 		Aluno aluno = repository.findById(id).get();
 		return aluno.getAvaliacoes();
 
 	}
 	
-	public Aluno delete(Long id) {
+	public Aluno apagar(Long id) {
 		Aluno aluno = repository.findById(id).get();
 		repository.delete(aluno);
 		return null;

@@ -1,6 +1,7 @@
 package claudioESandrade.academia.Service.Implementations;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -30,8 +31,8 @@ public class MatriculaServiceImpl implements IMatriculaService {
 		  }
 
 		  @Override
-		  public Matricula obter(Long id) {
-		    return matriculaRepository.getReferenceById(id);
+		  public Optional<Matricula> obter(Long id) {
+		    return matriculaRepository.findById(id);
 		  }
 
 		  @Override
@@ -49,6 +50,4 @@ public class MatriculaServiceImpl implements IMatriculaService {
 		  public void apagar(Long id) {
 			  matriculaRepository.deleteById(id);
 		  }
-	  
-
 }

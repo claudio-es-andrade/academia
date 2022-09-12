@@ -5,6 +5,8 @@ import claudioESandrade.academia.Entity.Matricula;
 import claudioESandrade.academia.Service.Implementations.MatriculaServiceImpl;
 
 import java.util.List;
+import java.util.Optional;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,14 +27,15 @@ public class MatriculaController {
 	@Autowired
 	private MatriculaServiceImpl service;
 	
-	@GetMapping
-	public Matricula  get(@PathVariable Long id) {
+	@GetMapping("/{id}")
+	public Optional<Matricula>  get(@PathVariable Long id) {
 		return service.obter(id);
 	}
 	
-	@GetMapping("/all")
-	public List<Matricula> getAll(@PathVariable String bairro) {
-		return service.obterTodos(bairro);
+	@GetMapping
+	public List<Matricula> getAll(@RequestParam(value = "bairro", required = false) String bairro) {
+		List<Matricula> matriculas = service.obterTodos(bairro);
+		return matriculas;
 	}
 	
 	@PostMapping

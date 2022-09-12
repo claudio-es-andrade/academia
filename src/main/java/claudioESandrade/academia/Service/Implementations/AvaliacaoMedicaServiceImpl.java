@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class AvaliacaoMedicaServiceImpl implements IAvaliacaoMedicaService {
@@ -36,8 +37,8 @@ public class AvaliacaoMedicaServiceImpl implements IAvaliacaoMedicaService {
 	  }
 	  
 	  @Override
-	  public AvaliacaoMedica obter(Long id) {
-	    return avaliacaoMedicaRepository.getReferenceById(id);
+	  public Optional<AvaliacaoMedica> obter(Long id) {
+	    return avaliacaoMedicaRepository.findById(id);
 	  }
 
 	  @Override

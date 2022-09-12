@@ -4,6 +4,8 @@ import claudioESandrade.academia.DTO.AvaliacaoMedicaForm;
 import claudioESandrade.academia.Entity.AvaliacaoMedica;
 import claudioESandrade.academia.Service.Implementations.AvaliacaoMedicaServiceImpl;
 
+import java.util.Optional;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,8 +24,8 @@ public class AvaliacaoMedicaController {
 	@Autowired
 	private AvaliacaoMedicaServiceImpl service;
 
-	@GetMapping
-	public AvaliacaoMedica get(@PathVariable Long id) {
+	@GetMapping("/{id}")
+	public Optional<AvaliacaoMedica> get(@PathVariable Long id) {
 		return service.obter(id);
 	}
 

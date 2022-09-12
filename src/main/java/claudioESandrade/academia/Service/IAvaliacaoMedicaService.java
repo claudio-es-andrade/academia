@@ -1,6 +1,7 @@
 package claudioESandrade.academia.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 import claudioESandrade.academia.DTO.AvaliacaoMedicaForm;
 import claudioESandrade.academia.DTO.AvaliacaoMedicaUpdateForm;
@@ -20,7 +21,7 @@ public interface IAvaliacaoMedicaService {
 	   * @param id - id da Avaliação Física que será exibida.
 	   * @return - Avaliação Física de acordo com o Id fornecido.
 	   */
-	  AvaliacaoMedica obter(Long id);
+	  Optional <AvaliacaoMedica> obter(Long id);
 
 	  /**
 	   * Retorna todas as Avaliações Física que estão no banco de dados.

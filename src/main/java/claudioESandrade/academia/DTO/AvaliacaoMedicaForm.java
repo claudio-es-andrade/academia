@@ -11,15 +11,15 @@ public class AvaliacaoMedicaForm {
 	private Long alunoId;
 
 	@NotNull(message = "Preencha o campo corretamente.")
-	@Positive(message = "${validatedValue}' precisa ser positivo.")
-	@DecimalMax(value = "200.00", message = "'${validatedValue}' precisa ser até {value}.")
-	@DecimalMin(value = "1.00", message = "'${validatedValue}' precisa ser no mínimo {value}.")
+	@Positive(message = " '${validatedValue}' precisa ser positivo.")
+	@DecimalMax(value = "200.00", message = " '${validatedValue}' precisa ser até {value}.")
+	@DecimalMin(value = "1.00", message = " '${validatedValue}' precisa ser no mínimo {value}.")
 	private double peso;
 
 	@NotNull(message = "Preencha o campo corretamente.")
-	@Positive(message = "${validatedValue}' precisa ser positivo.")
-	@DecimalMin(value = "0.50", message = "'${validatedValue}' precisa ser no mínimo {value}.")
-	@DecimalMax( value = "2.50", message = "'${validatedValue}' precisa ser até {value}.")
+	@Positive(message = " '${validatedValue}' precisa ser positivo.")
+	@DecimalMin(value = "0.50", message = " '${validatedValue}' precisa ser no mínimo {value}.")
+	@DecimalMax( value = "2.50", message = " '${validatedValue}' precisa ser até {value}.")
 	private double altura;
 
 

@@ -1,6 +1,7 @@
 package claudioESandrade.academia.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 import claudioESandrade.academia.DTO.MatriculaForm;
 import claudioESandrade.academia.Entity.Matricula;
@@ -19,7 +20,7 @@ public interface IMatriculaService {
 	   * @param id - id da Matrícula que será exibida.
 	   * @return - Matrícula de acordo com o Id fornecido.
 	   */
-	  Matricula obter(Long id);
+	  Optional<Matricula> obter(Long id);
 
 	  /**
 	   * Retorna todas as Matrículas que estão no banco de dados.
