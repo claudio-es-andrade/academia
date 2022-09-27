@@ -9,21 +9,14 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>claudioESandrade</groupId>
-<<<<<<< HEAD
+
 	<artifactId>academia</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>academia</name>
 	<description>Projeto de Gerenciamento de uma Academia de Ginástica com o Spring Boot</description>
 	<properties>
 		<java.version>17</java.version>
-=======
-	<artifactId>academiaJDK11</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>academiaJDK11</name>
-	<description>Projeto de academia com Spring Boot</description>
-	<properties>
-		<java.version>11</java.version>
->>>>>>> 8714d42 (Correções e adição de métodos HTTP)
+
 	</properties>
 	<dependencies>
 		<dependency>
@@ -32,13 +25,10 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-<<<<<<< HEAD
-=======
 			<artifactId>spring-boot-starter-validation</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
->>>>>>> 8714d42 (Correções e adição de métodos HTTP)
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
@@ -48,42 +38,32 @@
 			<scope>runtime</scope>
 		</dependency>
 		<dependency>
-<<<<<<< HEAD
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
 			<scope>runtime</scope>
-=======
+		</dependency>
+		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<optional>true</optional>
->>>>>>> 8714d42 (Correções e adição de métodos HTTP)
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-<<<<<<< HEAD
-		
-=======
-
->>>>>>> 8714d42 (Correções e adição de métodos HTTP)
 		<!-- OpenAPI/Swagger (adicionado manualmente) -->
 		<dependency>
 			<groupId>org.springdoc</groupId>
 			<artifactId>springdoc-openapi-ui</artifactId>
 			<version>1.6.11</version>
 		</dependency>
-		<!-- OpenAPI/Swagger (adicionado manualmente) -->
-<<<<<<< HEAD
-		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-validation</artifactId>
+			<artifactId>spring-boot</artifactId>
+			<version>2.7.3</version>
 		</dependency>
-		
-=======
->>>>>>> 8714d42 (Correções e adição de métodos HTTP)
+		<!-- OpenAPI/Swagger (adicionado manualmente) -->
 	</dependencies>
 
 	<build>
@@ -91,8 +71,6 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-<<<<<<< HEAD
-=======
 				<configuration>
 					<excludes>
 						<exclude>
@@ -101,9 +79,7 @@
 						</exclude>
 					</excludes>
 				</configuration>
->>>>>>> 8714d42 (Correções e adição de métodos HTTP)
 			</plugin>
 		</plugins>
 	</build>
-
 </project>

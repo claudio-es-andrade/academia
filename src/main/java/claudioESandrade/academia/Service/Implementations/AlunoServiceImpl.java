@@ -33,7 +33,6 @@ public class AlunoServiceImpl implements IAlunoService{
 	@Override
 	public Aluno obter(Long id) {
 		Aluno aluno = repository.findById(id).get();
-		
 		return aluno;
 	}
 
@@ -48,9 +47,9 @@ public class AlunoServiceImpl implements IAlunoService{
 
 	}
 
-	public Aluno atualizar(AlunoUpdateForm form) {
+	public Aluno atualizar(Long id , AlunoUpdateForm form) {
 		
-		Aluno aluno = new Aluno();
+		Aluno aluno = repository.findById(id).get();
 		aluno.setNome(form.getNome());
 		aluno.setCpf(form.getCpf());
 		aluno.setBairro(form.getBairro());

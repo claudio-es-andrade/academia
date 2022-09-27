@@ -36,12 +36,12 @@ public interface IAlunoService {
 	   * no banco de dados.
 	   * @return Aluno recém-atualizado.
 	   */
-	  Aluno atualizar(AlunoUpdateForm formUpdate);
+	  Aluno atualizar(Long id , AlunoUpdateForm formUpdate);
 
 	  /**
 	   * Deleta um Aluno específico.
 	   * @param id id do Aluno que será removido.
-	 * @return 
+	   * @return
 	   */
 	  Aluno apagar(Long id);
 

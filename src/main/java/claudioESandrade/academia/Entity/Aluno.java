@@ -17,6 +17,14 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+import lombok.Data;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "tb_alunos")
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
@@ -35,59 +43,4 @@ public class Aluno {
 	@OneToMany(mappedBy = "aluno", cascade = CascadeType.REMOVE , fetch = FetchType.LAZY)
 	@JsonIgnore
 	private List<AvaliacaoMedica> avaliacoes = new ArrayList<>();
-	
-	
-	
-	public Long getId() {
-		return Id;
-	}
-	public void setId(Long id) {
-		Id = id;
-	}
-	public String getNome() {
-		return nome;
-	}
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-	public String getCpf() {
-		return cpf;
-	}
-	public void setCpf(String cpf) {
-		this.cpf = cpf;
-	}
-	public String getBairro() {
-		return bairro;
-	}
-	public void setBairro(String bairro) {
-		this.bairro = bairro;
-	}
-	public LocalDate getDataDeNascimento() {
-		return dataDeNascimento;
-	}
-	public void setDataDeNascimento(LocalDate dataDeNascimento) {
-		this.dataDeNascimento = dataDeNascimento;
-	}
-	public List<AvaliacaoMedica> getAvaliacoes() {
-		return avaliacoes;
-	}
-	public void setAvaliacoes(List<AvaliacaoMedica> avaliacoes) {
-		this.avaliacoes = avaliacoes;
-	}
-	public Aluno() {
-		super();
-	}
-	public Aluno(Long id, String nome, String cpf, String bairro, LocalDate dataDeNascimento,
-			List<AvaliacaoMedica> avaliacoes) {
-		super();
-		Id = id;
-		this.nome = nome;
-		this.cpf = cpf;
-		this.bairro = bairro;
-		this.dataDeNascimento = dataDeNascimento;
-		this.avaliacoes = avaliacoes;
-	}
-	
-	
-
 }
